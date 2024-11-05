@@ -1,17 +1,14 @@
 import "./App.css";
-import { lazy, Suspense, useState, useCallback } from "react";
-
 import HomePage from "./pages/HomePage";
+import ProfileCard from "./components/ProfileCard/ProfileCard";
 import initialProfileAvatar from "./assets/images/image-victor.jpg";
 import Button from "./components/Button/Button";
+import ProfileCardForm from "./components/Forms/ProfileCardForm/ProfileCardForm";
+import { useState } from "react";
+
 import Modal from "./components/Modal/Modal";
 import { calculateAge } from "./utils/calculateAge";
 import { motion } from "framer-motion";
-
-const ProfileCard = lazy(() => import("./components/ProfileCard/ProfileCard"));
-const ProfileCardForm = lazy(() =>
-  import("./components/Forms/ProfileCardForm/ProfileCardForm")
-);
 
 const initialProfile = {
   avatar: initialProfileAvatar,
@@ -27,9 +24,9 @@ function App() {
   const [profileData, setProfileData] = useState(initialProfile);
   const [isFormOpen, setIsFormOpen] = useState(false);
 
-  const toggleForm = useCallback(() => {
+  const toggleForm = () => {
     setIsFormOpen((prev) => !prev);
-  }, []);
+  };
 
   const handleFormSubmit = (data) => {
     const avatarUrl = URL.createObjectURL(data.avatar[0]);
@@ -49,7 +46,7 @@ function App() {
 
   return (
     <HomePage>
-      <Suspense>
+      <>
         <ProfileCard profileData={profileData} />
         <Button onClick={toggleForm}>Set new profile data</Button>
 
@@ -63,7 +60,7 @@ function App() {
             </motion.div>
           </Modal>
         )}
-      </Suspense>
+      </>
     </HomePage>
   );
 }
