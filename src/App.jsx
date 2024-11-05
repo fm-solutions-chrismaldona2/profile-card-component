@@ -1,14 +1,17 @@
 import "./App.css";
+import { lazy, Suspense, useState } from "react";
+
 import HomePage from "./pages/HomePage";
-import ProfileCard from "./components/ProfileCard/ProfileCard";
 import initialProfileAvatar from "./assets/images/image-victor.jpg";
 import Button from "./components/Button/Button";
-import ProfileCardForm from "./components/Forms/ProfileCardForm/ProfileCardForm";
-import { useState } from "react";
-import { createPortal } from "react-dom";
 import Modal from "./components/Modal/Modal";
 import { calculateAge } from "./utils/calculateAge";
 import { motion } from "framer-motion";
+
+const ProfileCard = lazy(() => import("./components/ProfileCard/ProfileCard"));
+const ProfileCardForm = lazy(() =>
+  import("./components/Forms/ProfileCardForm/ProfileCardForm")
+);
 
 const initialProfile = {
   avatar: initialProfileAvatar,
@@ -45,13 +48,13 @@ function App() {
   };
 
   return (
-    <HomePage>
-      <>
-        <ProfileCard profileData={profileData} />
-        <Button onClick={toggleForm}>Set new profile data</Button>
+    <Suspense>
+      <HomePage>
+        <>
+          <ProfileCard profileData={profileData} />
+          <Button onClick={toggleForm}>Set new profile data</Button>
 
-        {isFormOpen &&
-          createPortal(
+          {isFormOpen && (
             <Modal isOpen={isFormOpen} onClose={toggleForm}>
               <motion.div
                 initial={{ opacity: 0, translateY: -10 }}
@@ -59,11 +62,11 @@ function App() {
               >
                 <ProfileCardForm onSubmit={handleFormSubmit} />
               </motion.div>
-            </Modal>,
-            document.getElementById("modals")
+            </Modal>
           )}
-      </>
-    </HomePage>
+        </>
+      </HomePage>
+    </Suspense>
   );
 }
 
