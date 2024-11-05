@@ -48,25 +48,23 @@ function App() {
   };
 
   return (
-    <Suspense>
-      <HomePage>
-        <>
-          <ProfileCard profileData={profileData} />
-          <Button onClick={toggleForm}>Set new profile data</Button>
+    <HomePage>
+      <Suspense>
+        <ProfileCard profileData={profileData} />
+        <Button onClick={toggleForm}>Set new profile data</Button>
 
-          {isFormOpen && (
-            <Modal isOpen={isFormOpen} onClose={toggleForm}>
-              <motion.div
-                initial={{ opacity: 0, translateY: -10 }}
-                animate={{ opacity: 1, translateY: 0 }}
-              >
-                <ProfileCardForm onSubmit={handleFormSubmit} />
-              </motion.div>
-            </Modal>
-          )}
-        </>
-      </HomePage>
-    </Suspense>
+        {isFormOpen && (
+          <Modal isOpen={isFormOpen} onClose={toggleForm}>
+            <motion.div
+              initial={{ opacity: 0, translateY: -10 }}
+              animate={{ opacity: 1, translateY: 0 }}
+            >
+              <ProfileCardForm onSubmit={handleFormSubmit} />
+            </motion.div>
+          </Modal>
+        )}
+      </Suspense>
+    </HomePage>
   );
 }
 
