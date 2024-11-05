@@ -1,0 +1,38 @@
+.modal,
+.modal__overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100dvw;
+  height: 100dvh;
+}
+
+.modal__overlay {
+  background-color: rgba(0, 0, 0, 0.35);
+}
+
+.modal__content {
+  padding: 1rem;
+  max-width: fit-content;
+  display: grid;
+  place-items: center;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+}
+
+.modal__close {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  width: 1.15rem;
+  aspect-ratio: 1 / 1;
+  border: none;
+  background: none;
+  fill: #2d32484b;
+  cursor: pointer;
+}

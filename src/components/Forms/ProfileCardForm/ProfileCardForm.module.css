@@ -1,0 +1,52 @@
+.form__container {
+  font-family: var(--default-fm);
+  background-color: var(--white);
+  padding-block: 2rem;
+  padding-inline: clamp(1rem, 3vw + 0.5rem, 2rem);
+  border-radius: 1rem;
+  max-width: 30rem;
+}
+
+.form__title {
+  display: block;
+  font: 600 1.5rem/150% var(--default-fm);
+  color: var(--very-dark-desaturated-blue);
+  text-align: center;
+}
+
+.form__footer {
+  font-family: var(--default-fm);
+  display: block;
+  margin-top: 0.75rem;
+  text-align: center;
+  font-size: 0.85rem;
+}
+
+.form__footer a {
+  text-decoration: none;
+  color: var(--dark-cyan);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.form__group {
+  display: flex;
+  align-items: start;
+  justify-content: start;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.form__column {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.form__column > * {
+  flex: 1;
+}

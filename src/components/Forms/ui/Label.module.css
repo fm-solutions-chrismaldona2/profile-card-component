@@ -1,0 +1,9 @@
+.label {
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.label--required {
+  margin-left: 0.15rem;
+  color: var(--dark-cyan);
+}

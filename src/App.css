@@ -1,0 +1,17 @@
+@font-face {
+  font-family: "Kumbh Sans";
+  src: url("./assets/fonts/KumbhSans-VariableFont.ttf");
+  font-display: swap;
+}
+
+:root {
+  --default-fm: "Kumbh Sans", sans-serif;
+
+  --white: #ffffff;
+  --dark-cyan: #19a2ae;
+  --very-dark-desaturated-blue: #2d3248;
+  --dark-grayish-blue: #6a6f81;
+  --dark-gray: #969696;
+
+  --gray: #e7e7e7;
+}
