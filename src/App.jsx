@@ -1,5 +1,5 @@
 import "./App.css";
-import { lazy, Suspense, useState } from "react";
+import { lazy, Suspense, useState, useCallback } from "react";
 
 import HomePage from "./pages/HomePage";
 import initialProfileAvatar from "./assets/images/image-victor.jpg";
@@ -27,9 +27,9 @@ function App() {
   const [profileData, setProfileData] = useState(initialProfile);
   const [isFormOpen, setIsFormOpen] = useState(false);
 
-  const toggleForm = () => {
+  const toggleForm = useCallback(() => {
     setIsFormOpen((prev) => !prev);
-  };
+  }, []);
 
   const handleFormSubmit = (data) => {
     const avatarUrl = URL.createObjectURL(data.avatar[0]);
