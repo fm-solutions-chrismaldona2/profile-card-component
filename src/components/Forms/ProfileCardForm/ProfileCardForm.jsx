@@ -10,16 +10,7 @@ export default function ProfileCardForm({ onSubmit }) {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm({
-    defaultValues: {
-      name: "Lionel Messi",
-      birth: "1987-06-24",
-      location: "Rosario, Argentina",
-      followers: 450000000,
-      likes: 10000000,
-      photos: 123,
-    },
-  });
+  } = useForm();
 
   const validateBirthDate = (value) => {
     const today = new Date();

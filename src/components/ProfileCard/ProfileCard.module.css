@@ -51,6 +51,8 @@
 .profile__location {
   display: block;
   margin-top: 0.75rem;
+  overflow-wrap: break-word;
+  text-overflow: ellipsis;
   font: 400 1rem/1 var(--default-fm);
   color: var(--dark-grayish-blue);
 }
