@@ -11,6 +11,9 @@ This is my solution for the Frontend Mentor challenge: [Profile Card Component](
 - Framer Motion
 - CSS Modules
 
+## Live Site
+Deployed at [Netlify](https://profilecardcomponent-frontendmentor.netlify.app/).
+
 ## Preview
 
 ![Preview 1](./preview-1.jpg)
