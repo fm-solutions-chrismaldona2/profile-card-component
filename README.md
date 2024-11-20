@@ -2,6 +2,9 @@
 
 This is my solution for the Frontend Mentor challenge: [Profile Card Component](https://www.frontendmentor.io/challenges/profile-card-component-cfArpWshJ/hub).
 
+## Live Site
+Deployed at [Netlify](https://profilecardcomponent-frontendmentor.netlify.app/).
+
 ## Built With
 
 - Semantic HTML5
@@ -10,9 +13,6 @@ This is my solution for the Frontend Mentor challenge: [Profile Card Component](
 - React-Hook-Form
 - Framer Motion
 - CSS Modules
-
-## Live Site
-Deployed at [Netlify](https://profilecardcomponent-frontendmentor.netlify.app/).
 
 ## Preview
 
