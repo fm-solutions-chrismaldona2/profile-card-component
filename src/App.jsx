@@ -8,7 +8,7 @@ import { useState } from "react";
 
 import Modal from "./components/Modal/Modal";
 import { calculateAge } from "./utils/calculateAge";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 
 const initialProfile = {
   avatar: initialProfileAvatar,
@@ -49,17 +49,20 @@ function App() {
       <>
         <ProfileCard profileData={profileData} />
         <Button onClick={toggleForm}>Set new profile data</Button>
-
-        {isFormOpen && (
-          <Modal isOpen={isFormOpen} onClose={toggleForm}>
+        <AnimatePresence>
+          {isFormOpen && (
             <motion.div
-              initial={{ opacity: 0, translateY: -10 }}
-              animate={{ opacity: 1, translateY: 0 }}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              style={{ position: "absolute" }}
             >
-              <ProfileCardForm onSubmit={handleFormSubmit} />
+              <Modal isOpen={isFormOpen} onClose={toggleForm}>
+                <ProfileCardForm onSubmit={handleFormSubmit} />
+              </Modal>
             </motion.div>
-          </Modal>
-        )}
+          )}
+        </AnimatePresence>
       </>
     </HomePage>
   );
