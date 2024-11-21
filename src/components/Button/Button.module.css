@@ -8,7 +8,7 @@
   background-color: #40d2d7;
   box-shadow: 0 0.25rem 1rem rgba(0, 0, 0, 0.1);
   color: var(--white);
-  text-shadow: 0 0.1rem 0.25rem rgba(0, 0, 0, 0.3);
+  text-shadow: 0 0.09rem 0.25rem rgba(0, 0, 0, 0.2);
   padding: 1.15rem;
   cursor: pointer;
   transition: scale 0.35s ease;
